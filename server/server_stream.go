@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func (S *helloServer) SayHelloServerStreaming(req *pb.NameList, stream pb.GreetService_SayHelloServerStreamingServer) error{
+func (S *helloServer) SayHelloServerStreaming(req *pb.NameList, stream pb.GreetService_SayHelloServerStreamingServer) error {
 	log.Printf("got request with names: %v", req.Names)
 	for _, name := range req.Names {
 		res := &pb.HelloResponse{
